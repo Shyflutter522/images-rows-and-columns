@@ -15,8 +15,8 @@
         }
         #image-container {
             display: grid;
-            grid-template-columns: repeat(30, 1fr); /* 30 columnas */
-            grid-auto-rows: minmax(100px, auto); /* Ajusta la altura de las filas automáticamente */
+            grid-template-columns: repeat(30, 100px); /* 30 columnas de 100px cada una */
+            grid-auto-rows: 100px; /* Filas de 100px de altura */
             gap: 10px; /* Espaciado entre las imágenes */
             width: 100vw; /* Ocupa todo el ancho de la vista */
             max-width: 100%; /* Ajusta el tamaño máximo del contenedor */
@@ -41,7 +41,7 @@
         }
         img {
             width: 100%; /* Asegura que las imágenes ocupen el ancho de la celda */
-            height: auto; /* Mantiene la proporción de la imagen */
+            height: 100%; /* Ajusta la altura para llenar la celda */
             object-fit: cover; /* Recorta la imagen para ajustarse a la celda */
         }
     </style>
