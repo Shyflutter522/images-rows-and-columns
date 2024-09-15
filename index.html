@@ -7,55 +7,53 @@
     <style>
         body {
             display: flex;
-            justify-content: center; /* Centra la cuadrícula horizontalmente */
-            align-items: center;     /* Centra la cuadrícula verticalmente */
-            min-height: 100vh;       /* Asegura que la cuadrícula esté centrada verticalmente */
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             margin: 0;
-            background-color: #f0f0f0; /* Fondo opcional */
-            overflow-x: auto; /* Permite el desplazamiento horizontal en el body */
+            background-color: #f0f0f0;
+            overflow-x: auto; /* Permite el desplazamiento horizontal */
         }
         #image-container {
             display: grid;
-            grid-template-columns: repeat(30, 300px); /* 30 columnas de 300px cada una */
-            grid-auto-rows: 300px; /* Altura de las filas igual al tamaño de los sprites */
+            grid-template-columns: repeat(30, 200px); /* 30 columnas de 200px cada una */
+            grid-auto-rows: 200px; /* Altura de las filas */
             gap: 10px; /* Espaciado entre las imágenes */
-            width: max-content; /* Permite que el contenedor se ajuste al contenido */
-            box-sizing: border-box; /* Incluye el padding en el tamaño total */
-            padding: 10px; /* Espacio alrededor del contenedor */
+            width: max-content; /* Ajusta el contenedor al contenido */
+            box-sizing: border-box;
+            padding: 10px;
         }
         .image-wrapper {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centra la imagen y la etiqueta horizontalmente */
-            position: relative; /* Para posicionar la etiqueta en relación con la imagen */
+            align-items: center;
+            position: relative;
         }
         .image-tag {
             background-color: black;
             color: white;
             text-align: center;
-            padding: 3px; /* Ajusta el padding para hacer la etiqueta más compacta */
+            padding: 2px;
             box-sizing: border-box;
-            font-size: 10px; /* Ajusta el tamaño de la fuente */
+            font-size: 9px; /* Fuente más pequeña */
             font-family: Arial, sans-serif;
             font-weight: bold;
-            width: 100%; /* Asegura que la etiqueta ocupe todo el ancho del contenedor */
-            position: relative; /* Posiciona la etiqueta debajo de la imagen */
-            margin-top: 3px; /* Espacio entre la imagen y la etiqueta */
+            width: 100%;
+            position: relative;
+            margin-top: 2px; /* Espacio entre la imagen y la etiqueta */
         }
         img {
-            width: 100%; /* Asegura que las imágenes ocupen el ancho de la celda */
-            height: 100%; /* Ajusta la altura para llenar la celda */
+            width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+            height: 100%; /* Ajusta la altura */
             object-fit: cover; /* Recorta la imagen para ajustarse a la celda */
-            display: block; /* Elimina el espacio en blanco debajo de la imagen */
+            display: block;
         }
     </style>
 </head>
 <body>
-    <!-- Contenedor para las imágenes -->
     <div id="image-container"></div>
 
     <script>
-        // JavaScript para generar las imágenes
         const container = document.getElementById('image-container');
         for (let i = 0; i < 360; i++) {
             const wrapper = document.createElement('div');
