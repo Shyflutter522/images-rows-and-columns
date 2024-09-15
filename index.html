@@ -15,13 +15,14 @@
         }
         #image-container {
             display: grid;
-            grid-template-columns: repeat(30, 100px); /* 30 columnas de 100px cada una */
-            grid-auto-rows: 100px; /* Filas de 100px de altura */
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Columnas ajustables */
+            grid-auto-rows: 100px; /* Altura de las filas fija */
             gap: 10px; /* Espaciado entre las imágenes */
             width: 100vw; /* Ocupa todo el ancho de la vista */
             max-width: 100%; /* Ajusta el tamaño máximo del contenedor */
             padding: 10px; /* Espacio alrededor del contenedor */
             box-sizing: border-box; /* Incluye el padding en el tamaño total */
+            overflow: auto; /* Permite el desplazamiento si es necesario */
         }
         .image-wrapper {
             display: flex;
