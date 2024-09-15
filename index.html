@@ -16,8 +16,8 @@
         }
         #image-container {
             display: grid;
-            grid-template-columns: repeat(30, 960px); /* 30 columnas de 960px cada una */
-            grid-auto-rows: 960px; /* Altura de las filas igual al tamaño de los sprites */
+            grid-template-columns: repeat(30, 300px); /* 30 columnas de 300px cada una */
+            grid-auto-rows: 300px; /* Altura de las filas igual al tamaño de los sprites */
             gap: 10px; /* Espaciado entre las imágenes */
             width: max-content; /* Permite que el contenedor se ajuste al contenido */
             box-sizing: border-box; /* Incluye el padding en el tamaño total */
@@ -33,16 +33,14 @@
             background-color: black;
             color: white;
             text-align: center;
-            padding: 3px 5px; /* Ajusta el padding para hacer la etiqueta más compacta */
+            padding: 3px; /* Ajusta el padding para hacer la etiqueta más compacta */
             box-sizing: border-box;
             font-size: 10px; /* Ajusta el tamaño de la fuente */
             font-family: Arial, sans-serif;
             font-weight: bold;
             width: 100%; /* Asegura que la etiqueta ocupe todo el ancho del contenedor */
-            position: absolute; /* Posiciona la etiqueta en la parte superior de la celda */
-            top: 0; /* Posiciona la etiqueta en la parte superior */
-            left: 0; /* Alinea la etiqueta a la izquierda */
-            z-index: 1; /* Asegura que la etiqueta esté sobre la imagen */
+            position: relative; /* Posiciona la etiqueta debajo de la imagen */
+            margin-top: 3px; /* Espacio entre la imagen y la etiqueta */
         }
         img {
             width: 100%; /* Asegura que las imágenes ocupen el ancho de la celda */
