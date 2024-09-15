@@ -20,9 +20,18 @@
     </style>
 </head>
 <body>
-    <!-- Sustituye 'imagen1.jpg', 'imagen2.jpg', etc. con los nombres de tus imágenes -->
-    <img src="sprite_4.png" alt="Imagen 1">
-    <img src="sprite_9.png" alt="Imagen 2">
-    <!-- Añade más imágenes aquí -->
+    <!-- Contenedor para las imágenes -->
+    <div id="image-container"></div>
+
+    <script>
+        // JavaScript para generar las imágenes
+        const container = document.getElementById('image-container');
+        for (let i = 0; i < 360; i++) {
+            const img = document.createElement('img');
+            img.src = `sprite_${i}.png`;
+            img.alt = `Sprite ${i}`;
+            container.appendChild(img);
+        }
+    </script>
 </body>
 </html>
