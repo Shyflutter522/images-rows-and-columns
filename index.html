@@ -24,20 +24,11 @@
             box-sizing: border-box; /* Incluye el padding en el tamaño total */
         }
         .image-wrapper {
-            position: relative;
-            width: 100%; /* Asegura que el wrapper ocupe el ancho de la celda */
-            height: 100%; /* Asegura que el wrapper ocupe el alto de la celda */
-        }
-        img {
-            width: 100%; /* Asegura que las imágenes ocupen el ancho de la celda */
-            height: auto; /* Mantiene la proporción de la imagen */
-            object-fit: cover; /* Recorta la imagen para ajustarse a la celda */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra la imagen y la etiqueta horizontalmente */
         }
         .image-tag {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
             background-color: black;
             color: white;
             text-align: center;
@@ -46,7 +37,12 @@
             font-size: 12px;
             font-family: Arial, sans-serif;
             font-weight: bold;
-            z-index: 1; /* Asegura que la etiqueta esté encima de la imagen */
+            width: 100%; /* Asegura que la etiqueta ocupe todo el ancho del contenedor */
+        }
+        img {
+            width: 100%; /* Asegura que las imágenes ocupen el ancho de la celda */
+            height: auto; /* Mantiene la proporción de la imagen */
+            object-fit: cover; /* Recorta la imagen para ajustarse a la celda */
         }
     </style>
 </head>
@@ -61,13 +57,13 @@
             const wrapper = document.createElement('div');
             wrapper.className = 'image-wrapper';
 
-            const img = document.createElement('img');
-            img.src = `sprite_${i}.png`;
-            img.alt = `Sprite ${i}`;
-
             const tag = document.createElement('div');
             tag.className = 'image-tag';
             tag.textContent = `sprite_${i}.png`;
+
+            const img = document.createElement('img');
+            img.src = `sprite_${i}.png`;
+            img.alt = `Sprite ${i}`;
 
             wrapper.appendChild(tag);
             wrapper.appendChild(img);
