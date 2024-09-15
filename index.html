@@ -27,6 +27,7 @@
             display: flex;
             flex-direction: column;
             align-items: center; /* Centra la imagen y la etiqueta horizontalmente */
+            margin-bottom: 30px; /* Espacio debajo del contenedor para la etiqueta */
         }
         .image-tag {
             background-color: black;
@@ -59,7 +60,7 @@
 
             const tag = document.createElement('div');
             tag.className = 'image-tag';
-            tag.textContent = `sprite_${i}.png`;
+            tag.textContent = i; // Solo muestra el número
 
             const img = document.createElement('img');
             img.src = `sprite_${i}.png`;
