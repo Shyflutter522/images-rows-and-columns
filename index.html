@@ -7,15 +7,26 @@
     <style>
         body {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            padding: 10px;
-            justify-content: center; /* Centra las imágenes horizontalmente */
+            justify-content: center; /* Centra la cuadrícula horizontalmente */
+            align-items: center;     /* Centra la cuadrícula verticalmente */
+            min-height: 100vh;       /* Asegura que la cuadrícula esté centrada verticalmente */
+            margin: 0;
+            background-color: #f0f0f0; /* Fondo opcional */
+        }
+        #image-container {
+            display: grid;
+            grid-template-columns: repeat(30, 1fr); /* 30 columnas */
+            grid-template-rows: repeat(12, auto);   /* 12 filas automáticas */
+            gap: 10px; /* Espaciado entre las imágenes */
+            width: 100vw; /* Ocupa todo el ancho de la vista */
+            max-width: 100%; /* Ajusta el tamaño máximo del contenedor */
+            padding: 10px; /* Espacio alrededor del contenedor */
+            box-sizing: border-box; /* Incluye el padding en el tamaño total */
         }
         img {
-            max-width: 200px;
-            max-height: 200px;
-            object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+            width: 100%; /* Asegura que las imágenes ocupen el ancho de la celda */
+            height: auto; /* Mantiene la proporción de la imagen */
+            object-fit: cover; /* Recorta la imagen para ajustarse a la celda */
         }
     </style>
 </head>
