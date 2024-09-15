@@ -16,13 +16,12 @@
         }
         #image-container {
             display: grid;
-            grid-template-columns: repeat(30, 100px); /* 30 columnas de 100px cada una */
-            grid-auto-rows: 100px; /* Altura de las filas fija */
+            grid-template-columns: repeat(30, 960px); /* 30 columnas de 960px cada una */
+            grid-auto-rows: 960px; /* Altura de las filas igual al tamaño de los sprites */
             gap: 10px; /* Espaciado entre las imágenes */
-            width: 100%; /* Ocupa todo el ancho del contenedor */
+            width: max-content; /* Permite que el contenedor se ajuste al contenido */
             box-sizing: border-box; /* Incluye el padding en el tamaño total */
             padding: 10px; /* Espacio alrededor del contenedor */
-            overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
         }
         .image-wrapper {
             display: flex;
