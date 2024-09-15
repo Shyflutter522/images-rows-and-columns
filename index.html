@@ -23,10 +23,30 @@
             padding: 10px; /* Espacio alrededor del contenedor */
             box-sizing: border-box; /* Incluye el padding en el tamaño total */
         }
+        .image-wrapper {
+            position: relative;
+            width: 100%; /* Asegura que el wrapper ocupe el ancho de la celda */
+            height: 100%; /* Asegura que el wrapper ocupe el alto de la celda */
+        }
         img {
             width: 100%; /* Asegura que las imágenes ocupen el ancho de la celda */
             height: auto; /* Mantiene la proporción de la imagen */
             object-fit: cover; /* Recorta la imagen para ajustarse a la celda */
+        }
+        .image-tag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            box-sizing: border-box;
+            font-size: 12px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            z-index: 1; /* Asegura que la etiqueta esté encima de la imagen */
         }
     </style>
 </head>
@@ -38,10 +58,20 @@
         // JavaScript para generar las imágenes
         const container = document.getElementById('image-container');
         for (let i = 0; i < 360; i++) {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'image-wrapper';
+
             const img = document.createElement('img');
             img.src = `sprite_${i}.png`;
             img.alt = `Sprite ${i}`;
-            container.appendChild(img);
+
+            const tag = document.createElement('div');
+            tag.className = 'image-tag';
+            tag.textContent = `sprite_${i}.png`;
+
+            wrapper.appendChild(tag);
+            wrapper.appendChild(img);
+            container.appendChild(wrapper);
         }
     </script>
 </body>
